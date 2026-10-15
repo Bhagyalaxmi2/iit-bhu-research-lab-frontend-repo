@@ -1,7 +1,7 @@
 import AdminOnly from "../components/AdminOnly";
 import { useEffect, useMemo, useState } from "react";
 
-import PHome from "../components/People/PHome/PHome";
+import PHome from "../components/People/Phome/Phome";
 import PhDScholars from "../components/People/PhDScholars/PhDScholars";
 import MTechStudents from "../components/People/MTechStudents/MTechStudents";
 import Alumni from "../components/People/Alumni/Alumni";
