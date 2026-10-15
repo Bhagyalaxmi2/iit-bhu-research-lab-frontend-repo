@@ -620,3 +620,22 @@
         border-radius: 15px;
     }
 }
+.contact-form-status {
+    margin: 0;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.contact-form-status.success {
+    color: #175b49;
+    background: #e9f7f1;
+    border: 1px solid #b8e4d2;
+}
+
+.contact-form-status.error {
+    color: #922b21;
+    background: #fff0ee;
+    border: 1px solid #f1c1ba;
+}

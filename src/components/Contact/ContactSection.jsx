@@ -9,246 +9,92 @@ import {
   FaGithub,
   FaTwitter
 } from "react-icons/fa";
-
 import { useState } from "react";
 import { sendMessage } from "../../services/contactApi";
 
-
 function ContactSection() {
+  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
+  const [isSending, setIsSending] = useState(false);
+  const [formStatus, setFormStatus] = useState({ text: "", type: "" });
 
-  // ==========================================
-  // STEP 1: Store form data
-  // ==========================================
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: ""
-  });
-
-
-  // ==========================================
-  // STEP 2: Handle input changes
-  // ==========================================
-
-  const handleChange = (e) => {
-
-    const { name, value } = e.target;
-
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value
-    }));
-
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((previous) => ({ ...previous, [name]: value }));
   };
 
-
-  // ==========================================
-  // STEP 3: Handle form submission
-  // ==========================================
-
-  const handleSubmit = async (e) => {
-
-    // Prevent browser from refreshing
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsSending(true);
+    setFormStatus({ text: "", type: "" });
 
     try {
-
-      // Send form data to backend
-      await sendMessage(formData);
-
-      // Clear form after successful submission
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: ""
+      const result = await sendMessage(formData);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormStatus({
+        text: result.emailNotificationSent
+          ? "Thank you! Your message has been sent to the lab."
+          : "Thank you! Your message was saved. Email notifications are not configured yet.",
+        type: "success"
       });
-
-      alert("Message sent successfully!");
-
     } catch (error) {
-
-      console.error("Error sending message:", error);
-
-      alert("Failed to send message. Please try again.");
-
+      console.error("Error sending contact message:", error);
+      setFormStatus({ text: "We could not send your message. Please try again.", type: "error" });
+    } finally {
+      setIsSending(false);
     }
-
   };
 
-
   return (
-
     <section className="contact">
-
-
-      {/* ==========================================
-          PAGE HEADING
-      ========================================== */}
-
       <h1>Contact Us</h1>
-
       <p className="contact-subtitle">
-        We'd love to hear from you. Feel free to contact our research laboratory.
+        We&apos;d love to hear from you. Feel free to contact our research laboratory.
       </p>
 
-
-      {/* ==========================================
-          CONTACT CONTAINER
-      ========================================== */}
-
       <div className="contact-container">
-
-
-        {/* ==========================================
-            LEFT SIDE - CONTACT INFORMATION
-        ========================================== */}
-
         <div className="contact-info">
-
           <h2>Research Laboratory</h2>
-
-
-          <p>
-            <FaMapMarkerAlt />
-            IIT (BHU), Varanasi, Uttar Pradesh, India
-          </p>
-
-
-          <p>
-            <FaPhone />
-            +91 9876543210
-          </p>
-
-
-          <p>
-            <FaEnvelope />
-            researchlab@iitbhu.ac.in
-          </p>
-
-
-          <p>
-            <FaClock />
-            Monday - Friday | 9:00 AM - 5:00 PM
-          </p>
-
-
-          {/* Social Media */}
-
+          <p><FaMapMarkerAlt /> IIT (BHU), Varanasi, Uttar Pradesh, India</p>
+          <p><FaPhone /> +91 987xxxxxxx</p>
+          <p><FaEnvelope /> researchlab@iitbhu.ac.in</p>
+          <p><FaClock /> Monday - Friday | 9:00 AM - 5:00 PM</p>
           <div className="social-icons">
-
             <FaLinkedin />
-
             <FaGithub />
-
             <FaTwitter />
-
           </div>
-
         </div>
-
-
-
-        {/* ==========================================
-            RIGHT SIDE - CONTACT FORM
-        ========================================== */}
 
         <div className="contact-form">
-
           <h2>Send Message</h2>
-
-
-          {/* IMPORTANT:
-              Connect form to handleSubmit
-          */}
-
           <form onSubmit={handleSubmit}>
-
-
-            {/* NAME */}
-
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-
-
-            {/* EMAIL */}
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-
-
-            {/* SUBJECT */}
-
-            <input
-              type="text"
-              name="subject"
-              placeholder="Subject"
-              value={formData.subject}
-              onChange={handleChange}
-              required
-            />
-
-
-            {/* MESSAGE */}
-
-            <textarea
-              name="message"
-              rows="6"
-              placeholder="Message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-
-
-            {/* SUBMIT BUTTON */}
-
-            <button type="submit">
-              Send Message
+            <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} autoComplete="name" maxLength={100} required />
+            <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} autoComplete="email" maxLength={254} required />
+            <input type="text" name="subject" placeholder="Subject" value={formData.subject} onChange={handleChange} maxLength={200} required />
+            <textarea name="message" rows="6" placeholder="Message" value={formData.message} onChange={handleChange} maxLength={5000} required />
+            <button type="submit" disabled={isSending}>
+              {isSending ? "Sending…" : "Send Message"}
             </button>
-
+            {formStatus.text && (
+              <p className={`contact-form-status ${formStatus.type}`} role="status" aria-live="polite">
+                {formStatus.text}
+              </p>
+            )}
           </form>
-
         </div>
-
       </div>
-
-
-
-      {/* ==========================================
-          GOOGLE MAP
-      ========================================== */}
 
       <div className="map">
-
         <iframe
-          title="IIT BHU"
+          title="IIT BHU location map"
           src="https://www.google.com/maps?q=IIT%20BHU%20Varanasi&output=embed"
-          allowFullScreen=""
+          allowFullScreen
           loading="lazy"
-        ></iframe>
-
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </div>
-
     </section>
-
   );
-
 }
-
 
 export default ContactSection;
