@@ -1,3 +1,4 @@
+import AdminOnly from "../AdminOnly";
 import { useEffect, useState } from "react";
 
 import ResearchCard from "./ResearchCard";
@@ -300,6 +301,7 @@ function ResearchSec() {
           ONLY SHOW WHEN BUTTON IS CLICKED
       ===================================== */}
 
+      <AdminOnly>
       {showEditForm && (
         <div className="research-edit-form">
 
@@ -480,6 +482,7 @@ function ResearchSec() {
           RESEARCH CARDS
       ===================================== */}
 
+      </AdminOnly>
       <div className="research-container">
 
         {researchData.map((research) => (

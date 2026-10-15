@@ -1,3 +1,4 @@
+import AdminOnly from "../AdminOnly";
 import React from "react";
 import "./ResearchCard.css";
 
@@ -74,7 +75,7 @@ function ResearchCard({ research, onEdit, onDelete }) {
                     ADMIN ACTIONS
                 ====================================== */}
 
-                <div className="research-card-actions">
+                <AdminOnly><div className="research-card-actions">
 
                     <button
                         type="button"
@@ -93,7 +94,7 @@ function ResearchCard({ research, onEdit, onDelete }) {
                         🗑 Delete
                     </button>
 
-                </div>
+                </div></AdminOnly>
 
             </div>
 

@@ -1,3 +1,4 @@
+import AdminOnly from "../AdminOnly";
 import React, { useEffect, useState } from "react";
 
 import {
@@ -659,13 +660,13 @@ function PublicationSection() {
             ADD BUTTON
         ================================================= */}
 
-        <button
+        <AdminOnly><button
           type="button"
           className="add-publication-btn"
           onClick={handleAddPublication}
         >
           + Add Publication
-        </button>
+        </button></AdminOnly>
 
       </div>
 
@@ -712,7 +713,7 @@ function PublicationSection() {
           ADD / EDIT FORM
       ================================================= */}
 
-      {!loading && !error && showForm && (
+      <AdminOnly>{!loading && !error && showForm && (
 
         <div
           id="publication-form"
@@ -1030,7 +1031,7 @@ function PublicationSection() {
       )}
 
 
-      {/* =================================================
+      </AdminOnly>{/* =================================================
           PUBLICATION GRID
       ================================================= */}
 

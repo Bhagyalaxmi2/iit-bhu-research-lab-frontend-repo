@@ -1,3 +1,4 @@
+import { isAdminSession } from "../AdminOnly";
 
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -8,13 +9,13 @@ function Navbar() {
 
   // Step 1: Initialize login state from localStorage
   const [isLoggedIn, setIsLoggedIn] = useState(
-    () => Boolean(localStorage.getItem("token"))
+    () => isAdminSession()
   );
 
   // Step 2: Keep Navbar synchronized with login/logout changes
   useEffect(() => {
     const updateAuthState = () => {
-      setIsLoggedIn(Boolean(localStorage.getItem("token")));
+      setIsLoggedIn(isAdminSession());
     };
 
     // Listen for authentication changes in this tab

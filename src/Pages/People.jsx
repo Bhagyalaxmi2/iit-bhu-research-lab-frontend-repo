@@ -1,3 +1,4 @@
+import AdminOnly from "../components/AdminOnly";
 import { useEffect, useMemo, useState } from "react";
 
 import PHome from "../components/People/PHome/PHome";
@@ -220,9 +221,9 @@ function People() {
       </section>
 
       {/* Existing member addition component */}
-      <div className="people-add-section">
+      <AdminOnly><div className="people-add-section">
         <PHome onAddPerson={handleAddPerson} />
-      </div>
+      </div></AdminOnly>
 
       {/* Directory and filters */}
       <section className="people-directory" id="team-directory">

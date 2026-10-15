@@ -1,3 +1,4 @@
+import AdminOnly, { isAdminSession } from "../AdminOnly";
 import React, { useEffect, useState } from "react";
 import {
   getSupervisor,
@@ -826,7 +827,7 @@ function EditableSection({
         </div>
 
 
-        <button
+        <AdminOnly><button
           className="add-button"
           type="button"
           onClick={() => {
@@ -840,7 +841,7 @@ function EditableSection({
           }}
         >
           + Add
-        </button>
+        </button></AdminOnly>
 
 
       </div>
@@ -1001,7 +1002,7 @@ function EditableSection({
                   CARD ACTIONS
               ================================================= */}
 
-              <div className="card-actions">
+              <AdminOnly><div className="card-actions">
 
 
                 <button
@@ -1035,7 +1036,7 @@ function EditableSection({
                 </button>
 
 
-              </div>
+              </div></AdminOnly>
 
 
             </article>
@@ -1052,7 +1053,7 @@ function EditableSection({
           ADD / EDIT FORM
       ================================================= */}
 
-      {showForm &&
+      {isAdminSession() && showForm &&
         editing && (
 
           <div className="editor-box">

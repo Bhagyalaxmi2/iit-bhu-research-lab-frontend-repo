@@ -1,3 +1,4 @@
+import AdminOnly from "../components/AdminOnly";
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
@@ -244,7 +245,7 @@ function PersonProfile() {
             MANAGEMENT BUTTONS
         ================================================= */}
 
-        <div className="profile-actions">
+        <AdminOnly><div className="profile-actions">
 
           {!isEditing && (
             <>
@@ -264,14 +265,14 @@ function PersonProfile() {
             </>
           )}
 
-        </div>
+        </div></AdminOnly>
 
 
         {/* =================================================
             EDIT FORM
         ================================================= */}
 
-        {isEditing && (
+        <AdminOnly>{isEditing && (
 
           <section className="profile-edit-form">
 
@@ -553,7 +554,7 @@ function PersonProfile() {
 
           </section>
 
-        )}
+        )}</AdminOnly>
 
 
         {/* =================================================

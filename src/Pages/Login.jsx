@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import { loginAdmin } from "../services/authApi";
 
 function Login() {
   const navigate = useNavigate();
@@ -19,27 +20,7 @@ function Login() {
     setLoading(true);
 
     try {
-      // Step 1: Send login request to backend
-      const response = await fetch(
-        "http://localhost:5000/api/auth/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            username,
-            password,
-          }),
-        }
-      );
-
-      // Step 2: Read backend response
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Login failed");
-      }
+      const data = await loginAdmin({ username, password });
 
       // Step 3: Save authentication data
       localStorage.setItem("token", data.token);
@@ -48,13 +29,11 @@ function Login() {
       // Step 4: Notify Navbar immediately after login
       window.dispatchEvent(new Event("auth-change"));
 
-      console.log("User:", data.user);
-
       // Step 5: Navigate to Admin Dashboard
       navigate("/admin/dashboard");
 
     } catch (error) {
-      setError(error.message || "Something went wrong");
+      setError(error.response?.data?.message || error.message || "Something went wrong");
     } finally {
       setLoading(false);
     }

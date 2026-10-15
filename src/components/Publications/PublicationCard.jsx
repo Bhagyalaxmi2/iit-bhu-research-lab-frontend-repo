@@ -1,3 +1,4 @@
+import AdminOnly from "../AdminOnly";
 import React from "react";
 import "./PublicationCard.css";
 
@@ -156,7 +157,7 @@ function PublicationCard({
           Read Paper ↗
         </button>
 
-        <button
+        <AdminOnly><button
           type="button"
           className="btn-edit"
           onClick={() => onEdit(publication)}
@@ -170,7 +171,7 @@ function PublicationCard({
           onClick={() => onDelete(publication.id)}
         >
           Delete
-        </button>
+        </button></AdminOnly>
 
       </div>
 

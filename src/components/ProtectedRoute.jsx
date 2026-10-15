@@ -1,15 +1,8 @@
 import { Navigate } from "react-router-dom";
+import { isAdminSession } from "./AdminOnly";
 
 function ProtectedRoute({ children }) {
-  const token = localStorage.getItem("token");
-
-  // No token → send user to login
-  if (!token) {
-    return <Navigate to="/login" replace />;
-  }
-
-  // Token exists → allow access
-  return children;
+  return isAdminSession() ? children : <Navigate to="/login" replace />;
 }
 
 export default ProtectedRoute;

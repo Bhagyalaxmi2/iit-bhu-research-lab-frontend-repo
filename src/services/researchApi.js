@@ -1,50 +1,6 @@
-import axios from "axios";
+import api from "./api";
 
-//const API_URL = "http://localhost:5000/api/research";
-const API_URL = `${import.meta.env.VITE_API_URL}/api/research`;
-
-// GET
-export const getResearch = async () => {
-
-    const response = await axios.get(API_URL);
-
-    return response.data;
-};
-
-
-// CREATE
-export const addResearch = async (research) => {
-
-    const response = await axios.post(
-        API_URL,
-        research
-    );
-
-    return response.data;
-};
-
-
-// UPDATE
-export const updateResearch = async (
-    id,
-    research
-) => {
-
-    const response = await axios.put(
-        `${API_URL}/${id}`,
-        research
-    );
-
-    return response.data;
-};
-
-
-// DELETE
-export const deleteResearch = async (id) => {
-
-    const response = await axios.delete(
-        `${API_URL}/${id}`
-    );
-
-    return response.data;
-};
+export const getResearch = async () => (await api.get("/research")).data;
+export const addResearch = async (research) => (await api.post("/research", research)).data;
+export const updateResearch = async (id, research) => (await api.put(`/research/${id}`, research)).data;
+export const deleteResearch = async (id) => (await api.delete(`/research/${id}`)).data;

@@ -1,1 +1,3 @@
-const API_URL = `${import.meta.env.VITE_API_URL}/api/auth`;
+import api from "./api";
+
+export const loginAdmin = async (credentials) => (await api.post("/auth/login", credentials)).data;

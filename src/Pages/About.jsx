@@ -1,3 +1,4 @@
+import AdminOnly from "../components/AdminOnly";
 import { useState } from "react";
 import "./About.css";
 import AboutCard from "../components/About/AboutCard";
@@ -74,7 +75,7 @@ function About() {
 in Artificial Intelligence, Drug Discovery,
 Machine Learning and Biotechnology.</h4>
 
-      <button
+      <AdminOnly><button
         className="add-btn"
         onClick={() => {
           setEditingCard(null);
@@ -93,7 +94,7 @@ Machine Learning and Biotechnology.</h4>
         />
       )}
 
-      <div className="cards">
+      </AdminOnly><div className="cards">
         {cards.map((card) => (
           <AboutCard
             key={card.id}

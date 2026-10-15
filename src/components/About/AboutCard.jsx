@@ -1,3 +1,4 @@
+import AdminOnly from "../AdminOnly";
 function AboutCard({ card, deleteCard, editCard }) {
   return (
     <div className="card">
@@ -8,7 +9,7 @@ function AboutCard({ card, deleteCard, editCard }) {
 
       <p>{card.description}</p>
 
-      <div className="buttons">
+      <AdminOnly><div className="buttons">
 
         <button onClick={() => editCard(card)}>
           Edit
@@ -18,7 +19,7 @@ function AboutCard({ card, deleteCard, editCard }) {
           Delete
         </button>
 
-      </div>
+      </div></AdminOnly>
 
     </div>
   );
