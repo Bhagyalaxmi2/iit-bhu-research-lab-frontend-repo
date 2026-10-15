@@ -1,0 +1,410 @@
+/* =====================================================
+   PUBLICATION CARD
+===================================================== */
+
+.publication-card {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #dce5ed;
+  border-radius: 14px;
+
+  padding: 24px 26px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.publication-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #c5d6e5;
+
+  box-shadow:
+    0 10px 28px rgba(16, 47, 77, 0.08);
+}
+
+
+/* =====================================================
+   CARD HEADER
+===================================================== */
+
+.publication-card-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 16px;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.publication-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+
+/* Published */
+
+.status-published {
+  color: #176b45;
+
+  background: #e9f7ef;
+
+  border: 1px solid #ccebd9;
+}
+
+
+/* Accepted */
+
+.status-accepted {
+  color: #8a5a00;
+
+  background: #fff4d6;
+
+  border: 1px solid #f3dfaa;
+}
+
+
+/* =====================================================
+   YEAR
+===================================================== */
+
+.publication-year {
+  color: #718396;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.publication-title {
+  margin: 0 0 20px;
+
+  color: #102f4d;
+
+  font-size: 20px;
+
+  line-height: 1.42;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   INFORMATION FIELDS
+===================================================== */
+
+.publication-field {
+  margin-bottom: 15px;
+}
+
+.publication-field strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #243f56;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+}
+
+.publication-field p {
+  margin: 0;
+
+  color: #526b80;
+
+  font-size: 14px;
+
+  line-height: 1.55;
+}
+
+
+/* =====================================================
+   AUTHORS
+===================================================== */
+
+.publication-field:first-of-type p {
+  color: #34556f;
+}
+
+
+/* =====================================================
+   META INFORMATION
+===================================================== */
+
+.publication-meta {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-top: 4px;
+
+  padding: 14px 0;
+
+  border-top: 1px solid #edf1f4;
+}
+
+
+/* Research category */
+
+.publication-category {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 6px 10px;
+
+  border-radius: 6px;
+
+  background: #f1f6fa;
+
+  color: #38617d;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* Impact Factor */
+
+.publication-if {
+  color: #176fc1;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   ACTION AREA
+===================================================== */
+
+.publication-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 8px;
+
+  padding-top: 16px;
+
+  border-top: 1px solid #e8edf1;
+}
+
+
+/* =====================================================
+   ALL BUTTONS
+===================================================== */
+
+.publication-actions button {
+  min-height: 36px;
+
+  padding: 0 13px;
+
+  border-radius: 7px;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* =====================================================
+   READ PAPER
+===================================================== */
+
+.btn-read {
+  border: 1px solid #176fc1;
+
+  background: #176fc1;
+
+  color: #ffffff;
+}
+
+.btn-read:hover {
+  background: #0d5a9e;
+
+  border-color: #0d5a9e;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   EDIT
+===================================================== */
+
+.btn-edit {
+  margin-left: auto;
+
+  border: 1px solid #cfe0ef;
+
+  background: #f1f7fc;
+
+  color: #176fc1;
+}
+
+.btn-edit:hover {
+  background: #e1effa;
+
+  border-color: #176fc1;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   DELETE
+===================================================== */
+
+.btn-delete {
+  border: 1px solid #f0d2cd;
+
+  background: #fff5f3;
+
+  color: #c0392b;
+}
+
+.btn-delete:hover {
+  background: #fde6e2;
+
+  border-color: #c0392b;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   CARD FOCUS
+===================================================== */
+
+.publication-actions button:focus-visible {
+  outline: 3px solid rgba(23, 111, 193, 0.18);
+
+  outline-offset: 2px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .publication-card {
+    padding: 20px;
+  }
+
+  .publication-title {
+    font-size: 18px;
+  }
+
+  .publication-actions {
+    flex-wrap: wrap;
+  }
+
+  .btn-read {
+    flex: 1;
+  }
+
+  .btn-edit {
+    margin-left: 0;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .publication-card {
+    padding: 17px;
+  }
+
+  .publication-title {
+    font-size: 17px;
+  }
+
+  .publication-field p {
+    font-size: 13px;
+  }
+
+  .publication-meta {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 9px;
+  }
+
+  .publication-actions {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+  }
+
+  .btn-read {
+    grid-column: 1 / -1;
+  }
+
+  .btn-edit,
+  .btn-delete {
+    width: 100%;
+  }
+}

@@ -1,0 +1,139 @@
+/* ==============================
+   LOGIN PAGE
+================================ */
+
+.login-page {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background: #f5f8fc;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 430px;
+  background: #ffffff;
+  padding: 42px 38px;
+  border-radius: 16px;
+  border: 1px solid #e3eaf2;
+  box-shadow: 0 12px 35px rgba(20, 50, 80, 0.10);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-header h1 {
+  margin: 0;
+  color: #102a43;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.login-header p {
+  margin-top: 8px;
+  color: #627d98;
+  font-size: 15px;
+}
+
+/* Form */
+
+.login-form {
+  width: 100%;
+}
+
+.login-field {
+  margin-bottom: 20px;
+}
+
+.login-field label {
+  display: block;
+  margin-bottom: 7px;
+  color: #243b53;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-field input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #bcccdc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  color: #102a43;
+  background: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-field input:focus {
+  border-color: #1769aa;
+  box-shadow: 0 0 0 3px rgba(23, 105, 170, 0.12);
+}
+
+.login-field input::placeholder {
+  color: #9fb3c8;
+}
+
+/* Error */
+
+.login-error {
+  padding: 11px 13px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background: #fff1f1;
+  border: 1px solid #ffd0d0;
+  color: #c62828;
+  font-size: 14px;
+}
+
+/* Button */
+
+.login-button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 8px;
+  background: #1769aa;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.login-button:hover {
+  background: #0d5a94;
+}
+
+.login-button:active {
+  transform: translateY(1px);
+}
+
+.login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .login-page {
+    min-height: calc(100vh - 60px);
+    padding: 30px 16px;
+  }
+
+  .login-container {
+    padding: 32px 24px;
+    border-radius: 14px;
+  }
+
+  .login-header h1 {
+    font-size: 26px;
+  }
+}

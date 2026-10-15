@@ -1,0 +1,257 @@
+
+/* =========================================
+   NAVBAR — PREMIUM ACADEMIC DESIGN
+========================================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  min-height: 88px;
+  padding: 10px clamp(18px, 3.5vw, 56px);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e8eef5;
+  box-shadow: 0 5px 24px rgba(23, 54, 85, 0.06);
+  backdrop-filter: blur(16px);
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.lab-logo {
+  display: block;
+  width: 285px;
+  height: 66px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(15px, 2vw, 30px);
+  height: 100%;
+  margin: 0 auto;
+}
+
+.nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 2px;
+
+  color: #26364d;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #075fe4;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 3px;
+  height: 3px;
+
+  background: #1265ee;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.22s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* Login / logout actions */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.login-btn,
+.logout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 19px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.16);
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #2487f5, #0755df);
+}
+
+.login-btn:hover {
+  background: #084bc4;
+  box-shadow: 0 7px 18px rgba(37, 99, 235, 0.25);
+  transform: translateY(-1px);
+}
+
+.logout-btn {
+  background: linear-gradient(135deg, #f05c68, #cf2449);
+  box-shadow: 0 5px 14px rgba(207, 36, 73, 0.14);
+}
+
+.logout-btn:hover {
+  background: #b91f40;
+  transform: translateY(-1px);
+}
+
+/* Keyboard accessibility */
+.nav-link:focus-visible,
+.login-btn:focus-visible,
+.logout-btn:focus-visible {
+  outline: 3px solid #91c5ff;
+  outline-offset: 4px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .navbar {
+    gap: 18px;
+    padding-inline: 20px;
+  }
+
+  .lab-logo {
+    width: 205px;
+    height: 58px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .login-btn,
+  .logout-btn {
+    padding-inline: 13px;
+  }
+}
+
+/* =========================================
+   MOBILE / SMALL SCREENS
+========================================= */
+
+@media (max-width: 760px) {
+  .navbar {
+    position: sticky;
+    top: 0;
+    min-height: auto;
+    padding: 10px 14px;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+  }
+
+  .logo-container {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .lab-logo {
+    width: min(210px, 58vw);
+    height: 48px;
+  }
+
+  .nav-actions {
+    gap: 7px;
+  }
+
+  .login-btn,
+  .logout-btn {
+    min-height: 36px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    height: 43px;
+    justify-content: flex-start;
+    gap: 23px;
+    margin: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-link {
+    min-height: 40px;
+    flex-shrink: 0;
+    font-size: 13px;
+  }
+
+  .nav-link::after {
+    bottom: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link,
+  .nav-link::after,
+  .login-btn,
+  .logout-btn {
+    transition: none;
+  }
+}

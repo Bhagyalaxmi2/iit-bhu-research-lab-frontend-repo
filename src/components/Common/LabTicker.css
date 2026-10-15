@@ -1,0 +1,36 @@
+.lab-ticker {
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(90deg, #002147, #004080);
+    color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-top: 3px solid #f4b400;
+    border-bottom: 3px solid #f4b400;
+}
+
+.lab-ticker-track {
+    display: flex;
+    width: max-content;
+    animation: ticker 25s linear infinite;
+}
+
+.lab-ticker-track span {
+    white-space: nowrap;
+    padding-right: 80px;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.6px;
+}
+
+@keyframes ticker {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}

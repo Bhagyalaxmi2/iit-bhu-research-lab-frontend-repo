@@ -1,0 +1,359 @@
+/* =====================================================
+   LATEST PUBLICATIONS
+===================================================== */
+
+.latest-publications {
+  width: 100%;
+
+  padding: 95px 6%;
+
+  background: #f7f9fc;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.publications-header {
+  max-width: 820px;
+
+  margin: 0 auto 55px;
+
+  text-align: center;
+}
+
+
+.publications-label {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #1769aa;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+.publications-header h2 {
+  margin: 0 0 18px;
+
+  color: #102a43;
+
+  font-size: 40px;
+
+  line-height: 1.25;
+
+  font-weight: 700;
+}
+
+
+.publications-header p {
+  max-width: 750px;
+
+  margin: 0 auto;
+
+  color: #52606d;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   PUBLICATION LIST
+===================================================== */
+
+.publication-list {
+  width: min(1050px, 100%);
+
+  margin: 0 auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+
+/* =====================================================
+   PUBLICATION ITEM
+===================================================== */
+
+.publication-item {
+  display: grid;
+
+  grid-template-columns: 80px 1fr auto;
+
+  align-items: center;
+
+  gap: 28px;
+
+  padding: 30px 32px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e8ef;
+
+  border-radius: 12px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.publication-item:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 30px rgba(16, 42, 67, 0.08);
+}
+
+
+/* =====================================================
+   YEAR
+===================================================== */
+
+.publication-year {
+  color: #1769aa;
+
+  font-size: 25px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.publication-type {
+  display: inline-block;
+
+  margin-bottom: 7px;
+
+  color: #687789;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+.publication-content h3 {
+  max-width: 750px;
+
+  margin: 0 0 8px;
+
+  color: #102a43;
+
+  font-size: 20px;
+
+  line-height: 1.45;
+
+  font-weight: 700;
+}
+
+
+.publication-journal {
+  margin: 0 0 8px;
+
+  color: #2876bd;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+.publication-description {
+  max-width: 720px;
+
+  margin: 0;
+
+  color: #5c6b7a;
+
+  font-size: 14.5px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   VIEW LINK
+===================================================== */
+
+.publication-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #1769aa;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+
+.publication-link span {
+  font-size: 18px;
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.publication-link:hover span {
+  transform: translateX(4px);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.publications-footer {
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 40px;
+}
+
+
+.all-publications-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 13px 22px;
+
+  border-radius: 6px;
+
+  background: #1769aa;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.all-publications-button:hover {
+  background: #0d4f82;
+
+  transform: translateY(-2px);
+}
+
+
+.all-publications-button span {
+  font-size: 18px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .publication-item {
+    grid-template-columns: 65px 1fr;
+
+    gap: 20px;
+  }
+
+
+  .publication-link {
+    grid-column: 2;
+
+    justify-self: start;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .latest-publications {
+    padding: 65px 20px;
+  }
+
+
+  .publications-header {
+    margin-bottom: 35px;
+  }
+
+
+  .publications-header h2 {
+    font-size: 29px;
+  }
+
+
+  .publications-header p {
+    font-size: 15px;
+  }
+
+
+  .publication-item {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    padding: 24px;
+  }
+
+
+  .publication-year {
+    font-size: 22px;
+  }
+
+
+  .publication-content h3 {
+    font-size: 18px;
+  }
+
+
+  .publication-description {
+    font-size: 14px;
+  }
+
+
+  .publication-link {
+    grid-column: auto;
+
+    margin-top: 5px;
+  }
+
+}

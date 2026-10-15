@@ -1,0 +1,1772 @@
+/* =========================================================
+   PERSON PROFILE PAGE
+   IIT BHU RESEARCH LAB
+========================================================= */
+
+.person-profile-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(31, 111, 92, 0.08), transparent 25%),
+        radial-gradient(circle at 90% 20%, rgba(37, 99, 235, 0.07), transparent 25%),
+        linear-gradient(180deg, #f8fbfa 0%, #f4f7f6 100%);
+    color: #1f2937;
+    padding: 0 0 80px;
+}
+
+
+/* =========================================================
+   COMMON CONTAINER
+========================================================= */
+
+.profile-container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.profile-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin: 28px 0 22px;
+
+    padding: 10px 16px;
+
+    border: 1px solid #dce8e3;
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    color: #1f6f5c;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow: 0 4px 15px rgba(31, 111, 92, 0.06);
+
+    transition: all 0.25s ease;
+}
+
+.profile-back:hover {
+    background: #1f6f5c;
+    color: white;
+
+    transform: translateX(-4px);
+
+    box-shadow: 0 8px 20px rgba(31, 111, 92, 0.2);
+}
+
+
+/* =========================================================
+   MANAGEMENT BUTTONS
+========================================================= */
+
+.profile-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 22px;
+}
+
+.profile-edit-btn,
+.profile-delete-btn {
+    border: none;
+
+    padding: 11px 18px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.profile-edit-btn {
+    background: linear-gradient(135deg, #1f6f5c, #2c8a72);
+    color: white;
+
+    box-shadow: 0 5px 15px rgba(31, 111, 92, 0.18);
+}
+
+.profile-edit-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 9px 22px rgba(31, 111, 92, 0.25);
+}
+
+.profile-delete-btn {
+    background: linear-gradient(135deg, #b42318, #d33b2f);
+    color: white;
+
+    box-shadow: 0 5px 15px rgba(180, 35, 24, 0.15);
+}
+
+.profile-delete-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 9px 22px rgba(180, 35, 24, 0.22);
+}
+
+
+/* =========================================================
+   EDIT FORM
+========================================================= */
+
+.profile-edit-form {
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 1px solid #dce8e3;
+    border-radius: 20px;
+
+    padding: 32px;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 15px 40px rgba(31, 111, 92, 0.08);
+
+    overflow: hidden;
+}
+
+.profile-edit-form::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 5px;
+
+    background: linear-gradient(
+        90deg,
+        #1f6f5c,
+        #3ba98a,
+        #4f7cff
+    );
+}
+
+.edit-heading {
+    margin-bottom: 28px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #e6eeeb;
+}
+
+.edit-heading span {
+    display: inline-block;
+
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    background: #e8f5f0;
+
+    color: #1f6f5c;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.edit-heading h2 {
+    margin: 10px 0 0;
+
+    color: #17201d;
+
+    font-size: 26px;
+}
+
+
+/* =========================================================
+   EDIT FIELDS
+========================================================= */
+
+.edit-field {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+.edit-field label {
+    margin-bottom: 8px;
+
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.edit-field input,
+.edit-field textarea,
+.edit-field select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 15px;
+
+    border: 1px solid #d3ded9;
+    border-radius: 9px;
+
+    background: #fbfdfc;
+
+    color: #1f2937;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.edit-field textarea {
+    min-height: 90px;
+
+    resize: vertical;
+}
+
+.edit-field input:hover,
+.edit-field textarea:hover,
+.edit-field select:hover {
+    border-color: #9dbdb2;
+}
+
+.edit-field input:focus,
+.edit-field textarea:focus,
+.edit-field select:focus {
+    outline: none;
+
+    background: white;
+
+    border-color: #1f6f5c;
+
+    box-shadow:
+        0 0 0 3px rgba(31, 111, 92, 0.1);
+}
+
+
+/* =========================================================
+   EDIT FORM BUTTONS
+========================================================= */
+
+.edit-form-actions {
+    display: flex;
+    gap: 12px;
+
+    margin-top: 28px;
+}
+
+.save-profile-btn,
+.cancel-profile-btn {
+    border: none;
+
+    padding: 12px 22px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.save-profile-btn {
+    background: linear-gradient(135deg, #1f6f5c, #2c8a72);
+    color: white;
+
+    box-shadow: 0 6px 16px rgba(31, 111, 92, 0.18);
+}
+
+.save-profile-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 9px 22px rgba(31, 111, 92, 0.25);
+}
+
+.cancel-profile-btn {
+    background: #edf1ef;
+    color: #374151;
+}
+
+.cancel-profile-btn:hover {
+    background: #dfe6e3;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO PROFILE CARD
+========================================================= */
+
+.profile-hero-card {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 380px 1fr;
+
+    min-height: 390px;
+
+    background: white;
+
+    border: 1px solid #dce8e3;
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 50px rgba(31, 111, 92, 0.1);
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   HERO IMAGE AREA
+========================================================= */
+
+.hero-photo-area {
+    position: relative;
+
+    min-height: 390px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #dcefe8,
+            #eef5f2 55%,
+            #d9e9e4
+        );
+
+    overflow: hidden;
+}
+
+.hero-photo-area::after {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    right: -90px;
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(31, 111, 92, 0.12);
+}
+
+.hero-photo {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 390px;
+
+    display: block;
+
+    object-fit: cover;
+
+    z-index: 1;
+
+    transition: transform 0.5s ease;
+}
+
+.profile-hero-card:hover .hero-photo {
+    transform: scale(1.025);
+}
+
+.photo-decoration {
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    top: -75px;
+    left: -75px;
+
+    border-radius: 50%;
+
+    border: 28px solid rgba(255, 255, 255, 0.35);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO DETAILS
+========================================================= */
+
+.hero-details {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 55px 60px;
+
+    background:
+        radial-gradient(
+            circle at 95% 5%,
+            rgba(79, 124, 255, 0.07),
+            transparent 25%
+        );
+}
+
+.member-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    width: fit-content;
+
+    padding: 7px 13px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #cce3db;
+    border-radius: 30px;
+
+    background: #eaf6f1;
+
+    color: #1f6f5c;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+.member-badge span {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #28a47d;
+
+    box-shadow: 0 0 0 4px rgba(40, 164, 125, 0.12);
+}
+
+.hero-details h1 {
+    margin: 0 0 10px;
+
+    max-width: 700px;
+
+    color: #17201d;
+
+    font-size: clamp(32px, 4vw, 50px);
+
+    line-height: 1.08;
+
+    font-weight: 750;
+
+    letter-spacing: -1px;
+}
+
+.hero-details h2 {
+    margin: 0 0 10px;
+
+    color: #1f6f5c;
+
+    font-size: 20px;
+
+    font-weight: 650;
+}
+
+.hero-position {
+    margin: 4px 0 25px;
+
+    color: #64716d;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   INSTITUTE INFORMATION
+========================================================= */
+
+.hero-institute {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #e3ebe8;
+
+    line-height: 1.6;
+}
+
+.hero-institute strong {
+    color: #34423d;
+
+    font-size: 14px;
+}
+
+.hero-institute span {
+    color: #71807b;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   QUICK INFORMATION
+========================================================= */
+
+.quick-cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+.quick-card {
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+    min-height: 105px;
+
+    padding: 22px;
+
+    background: white;
+
+    border: 1px solid #e1ebe7;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 7px 22px rgba(31, 111, 92, 0.05);
+
+    transition: all 0.3s ease;
+}
+
+.quick-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #1f6f5c,
+        #48a98c
+    );
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: transform 0.3s ease;
+}
+
+.quick-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #c9ded7;
+
+    box-shadow:
+        0 15px 30px rgba(31, 111, 92, 0.1);
+}
+
+.quick-card:hover::before {
+    transform: scaleX(1);
+}
+
+.quick-number {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #e5f4ef,
+        #d6ece5
+    );
+
+    color: #1f6f5c;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.quick-card p {
+    margin: 0 0 6px;
+
+    color: #78837f;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.quick-card h3 {
+    margin: 0;
+
+    color: #26332e;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    font-weight: 650;
+}
+
+.research-quick h3 {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   TWO COLUMN SECTION
+========================================================= */
+
+.profile-two-column {
+    display: grid;
+
+    grid-template-columns: 1.35fr 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+}
+
+.profile-two-column > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+
+/* =========================================================
+   PROFILE CARDS
+========================================================= */
+
+.profile-card {
+    position: relative;
+
+    background: white;
+
+    border: 1px solid #e1ebe7;
+
+    border-radius: 17px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 7px 22px rgba(31, 111, 92, 0.045);
+
+    transition: all 0.3s ease;
+}
+
+.profile-card::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 25px;
+    bottom: 25px;
+
+    width: 3px;
+
+    border-radius: 0 5px 5px 0;
+
+    background: #1f6f5c;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #cbded7;
+
+    box-shadow:
+        0 15px 32px rgba(31, 111, 92, 0.08);
+}
+
+.profile-card:hover::after {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.card-top {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 23px;
+}
+
+.card-symbol {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 13px;
+
+    background: linear-gradient(
+        135deg,
+        #e8f6f1,
+        #d8eee7
+    );
+
+    color: #1f6f5c;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    box-shadow:
+        0 5px 14px rgba(31, 111, 92, 0.08);
+}
+
+.card-top span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #1f6f5c;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.card-top h2 {
+    margin: 0;
+
+    color: #26332e;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   RESEARCH SECTION
+========================================================= */
+
+.research-card {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f7fbf9
+        );
+}
+
+.research-highlight {
+    position: relative;
+
+    padding: 22px 22px 22px 25px;
+
+    border-left: 4px solid #1f6f5c;
+
+    border-radius: 0 10px 10px 0;
+
+    background:
+        linear-gradient(
+            100deg,
+            #eef8f4,
+            #f7fbfa
+        );
+
+    color: #263b34;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    font-weight: 550;
+}
+
+.research-footer {
+    margin-top: 17px;
+
+    padding-top: 15px;
+
+    border-top: 1px dashed #d7e4df;
+
+    color: #6d7a76;
+
+    font-size: 13px;
+
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   CURRENT POSITION
+========================================================= */
+
+.card-description {
+    margin: 0;
+
+    color: #5e6a66;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-card {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f6f9ff
+        );
+}
+
+.contact-label {
+    margin: 0 0 8px;
+
+    color: #78837f;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.9px;
+}
+
+.email-link {
+    display: inline-block;
+
+    padding: 9px 13px;
+
+    border-radius: 8px;
+
+    background: #eef4ff;
+
+    color: #315bb8;
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    text-decoration: none;
+
+    word-break: break-word;
+
+    transition: all 0.25s ease;
+}
+
+.email-link:hover {
+    background: #dfeaff;
+
+    color: #244a9d;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   LAB INFORMATION
+========================================================= */
+
+.lab-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.lab-info > div {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #e8eeec;
+}
+
+.lab-info > div:first-child {
+    padding-top: 0;
+}
+
+.lab-info > div:last-child {
+    border-bottom: none;
+
+    padding-bottom: 0;
+}
+
+.lab-info span {
+    color: #7a8581;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.lab-info strong {
+    max-width: 65%;
+
+    color: #34423d;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    text-align: right;
+}
+
+.academic-snapshot {
+    position: relative;
+
+    background: linear-gradient(
+        135deg,
+        #f0f8f5,
+        #f7fbfa
+    );
+
+    border: 1px solid #d7e9e2;
+    border-radius: 19px;
+
+    padding: 36px;
+
+    margin-bottom: 30px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(31, 111, 92, 0.06);
+}
+
+
+/* Top decorative line */
+.academic-snapshot::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #b9dfd2,
+        #d7eee7,
+        #dce7ff
+    );
+}
+
+
+/* Subtle decorative circle */
+.academic-snapshot::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -70px;
+    bottom: -90px;
+
+    border-radius: 50%;
+
+    background: rgba(31, 111, 92, 0.045);
+
+    pointer-events: none;
+}
+
+
+/* Heading */
+.snapshot-heading {
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: 27px;
+}
+
+.snapshot-heading > span {
+    display: inline-block;
+
+    margin-bottom: 7px;
+
+    color: #4b8173;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.snapshot-heading h2 {
+    margin: 0 0 8px;
+
+    color: #29433b;
+
+    font-size: 26px;
+
+    font-weight: 700;
+}
+
+.snapshot-heading p {
+    margin: 0;
+
+    color: #71817b;
+
+    font-size: 14px;
+}
+
+
+/* Content */
+.snapshot-content {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    background: rgba(255, 255, 255, 0.55);
+
+    border: 1px solid rgba(215, 233, 226, 0.8);
+
+    border-radius: 12px;
+}
+
+
+/* Individual items */
+.snapshot-item {
+    padding: 22px;
+
+    border-right: 1px solid #dceae5;
+}
+
+.snapshot-item:first-child {
+    padding-left: 22px;
+}
+
+.snapshot-item:last-child {
+    border-right: none;
+}
+
+
+/* Labels */
+.snapshot-item span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #7e8b85;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* Values */
+.snapshot-item strong {
+    display: block;
+
+    color: #365148;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+
+
+
+/* =========================================================
+   ACADEMIC SNAPSHOT
+========================================================= */
+
+.academic-snapshot {
+    position: relative;
+
+    background: linear-gradient(
+        135deg,
+        #e3f2ed 0%,
+        #edf7f4 55%,
+        #e7f1f7 100%
+    );
+
+    border: 1px solid #c8e0d8;
+    border-radius: 20px;
+
+    padding: 36px;
+
+    margin-bottom: 30px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 30px rgba(31, 111, 92, 0.08);
+}
+
+
+/* Top decorative strip */
+.academic-snapshot::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 5px;
+
+    background: linear-gradient(
+        90deg,
+        #8bcdbb,
+        #b7ddd3,
+        #b8ccef
+    );
+}
+
+
+/* Decorative circle */
+.academic-snapshot::after {
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    right: -70px;
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(31, 111, 92, 0.06);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SNAPSHOT HEADING
+========================================================= */
+
+.snapshot-heading {
+    position: relative;
+
+    z-index: 1;
+
+    margin-bottom: 27px;
+}
+
+.snapshot-heading > span {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: #47766a;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.snapshot-heading h2 {
+    margin: 0 0 8px;
+
+    color: #173c32;
+
+    font-size: 27px;
+
+    line-height: 1.2;
+
+    font-weight: 750;
+}
+
+.snapshot-heading p {
+    margin: 0;
+
+    color: #58736b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SNAPSHOT CONTENT
+========================================================= */
+
+.snapshot-content {
+    position: relative;
+
+    z-index: 1;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    background: rgba(255, 255, 255, 0.62);
+
+    border: 1px solid rgba(200, 224, 216, 0.9);
+
+    border-radius: 13px;
+
+    overflow: hidden;
+
+    backdrop-filter: blur(4px);
+}
+
+
+/* =========================================================
+   SNAPSHOT ITEM
+========================================================= */
+
+.snapshot-item {
+    padding: 23px;
+
+    border-right: 1px solid #cfe2dc;
+
+    transition: background 0.25s ease;
+}
+
+.snapshot-item:hover {
+    background: rgba(255, 255, 255, 0.65);
+}
+
+.snapshot-item:last-child {
+    border-right: none;
+}
+
+
+/* Label */
+
+.snapshot-item span {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #47766a;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* Value */
+
+.snapshot-item strong {
+    display: block;
+
+    color: #1f3f36;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    font-weight: 700;
+}
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.profile-bottom {
+    display: flex;
+
+    justify-content: center;
+
+    padding-top: 5px;
+}
+
+.profile-bottom a {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 12px 20px;
+
+    border: 1px solid #cfe0da;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #1f6f5c;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow: 0 5px 16px rgba(31, 111, 92, 0.05);
+
+    transition: all 0.25s ease;
+}
+
+.profile-bottom a:hover {
+    background: #1f6f5c;
+
+    color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 20px rgba(31, 111, 92, 0.18);
+}
+
+
+/* =========================================================
+   LOADING / ERROR
+========================================================= */
+
+.profile-not-found {
+    min-height: 65vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    text-align: center;
+}
+
+.profile-not-found h2 {
+    margin: 0 0 16px;
+
+    color: #26332e;
+
+    font-size: 26px;
+}
+
+.profile-not-found a {
+    padding: 10px 18px;
+
+    border-radius: 25px;
+
+    background: #e8f5f0;
+
+    color: #1f6f5c;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.profile-not-found a:hover {
+    background: #1f6f5c;
+
+    color: white;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .profile-hero-card {
+        grid-template-columns: 320px 1fr;
+    }
+
+    .hero-details {
+        padding: 45px;
+    }
+
+    .quick-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .profile-two-column {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .profile-hero-card {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-photo-area {
+        height: 360px;
+        min-height: 360px;
+    }
+
+    .hero-photo {
+        min-height: 360px;
+    }
+
+    .hero-details {
+        padding: 38px;
+    }
+
+    .snapshot-content {
+        grid-template-columns: 1fr;
+    }
+
+    .snapshot-item {
+        border-right: none;
+
+        border-bottom: 1px solid #e4ece9;
+
+        padding-left: 0;
+    }
+
+    .snapshot-item:last-child {
+        border-bottom: none;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .person-profile-page {
+        padding-bottom: 50px;
+    }
+
+    .profile-container {
+        width: 94%;
+    }
+
+
+    /* Back */
+
+    .profile-back {
+        margin: 18px 0;
+
+        padding: 9px 13px;
+
+        font-size: 13px;
+    }
+
+
+    /* Actions */
+
+    .profile-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 9px;
+    }
+
+    .profile-edit-btn,
+    .profile-delete-btn {
+        width: 100%;
+    }
+
+
+    /* Edit form */
+
+    .profile-edit-form {
+        padding: 23px 18px;
+
+        border-radius: 14px;
+    }
+
+    .edit-heading h2 {
+        font-size: 21px;
+    }
+
+    .edit-form-actions {
+        flex-direction: column;
+    }
+
+    .save-profile-btn,
+    .cancel-profile-btn {
+        width: 100%;
+    }
+
+
+    /* Hero */
+
+    .profile-hero-card {
+        border-radius: 16px;
+    }
+
+    .hero-photo-area {
+        height: 300px;
+        min-height: 300px;
+    }
+
+    .hero-photo {
+        min-height: 300px;
+    }
+
+    .hero-details {
+        padding: 30px 23px;
+    }
+
+    .hero-details h1 {
+        font-size: 31px;
+
+        letter-spacing: -0.5px;
+    }
+
+    .hero-details h2 {
+        font-size: 18px;
+    }
+
+    .hero-position {
+        font-size: 14px;
+
+        margin-bottom: 20px;
+    }
+
+    .hero-institute strong {
+        font-size: 13px;
+    }
+
+    .hero-institute span {
+        font-size: 12px;
+    }
+
+
+    /* Quick cards */
+
+    .quick-cards {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .quick-card {
+        padding: 18px;
+
+        min-height: auto;
+    }
+
+
+    /* Profile cards */
+
+    .profile-card {
+        padding: 21px;
+
+        border-radius: 14px;
+    }
+
+    .card-top {
+        gap: 12px;
+    }
+
+    .card-symbol {
+        width: 42px;
+        height: 42px;
+
+        border-radius: 11px;
+    }
+
+    .card-top h2 {
+        font-size: 18px;
+    }
+
+    .research-highlight {
+        padding: 18px;
+
+        font-size: 14px;
+    }
+
+
+    /* Lab */
+
+    .lab-info > div {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .lab-info strong {
+        max-width: 100%;
+
+        text-align: left;
+    }
+
+
+    /* Academic */
+
+    .academic-snapshot {
+        padding: 25px 20px;
+
+        border-radius: 15px;
+    }
+
+    .snapshot-heading h2 {
+        font-size: 22px;
+    }
+
+    .snapshot-item {
+        padding: 17px 0;
+    }
+
+    .snapshot-item strong {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .hero-photo-area {
+        height: 250px;
+        min-height: 250px;
+    }
+
+    .hero-photo {
+        min-height: 250px;
+    }
+
+    .hero-details {
+        padding: 25px 18px;
+    }
+
+    .hero-details h1 {
+        font-size: 27px;
+    }
+
+    .hero-details h2 {
+        font-size: 16px;
+    }
+
+    .profile-card {
+        padding: 18px;
+    }
+
+    .academic-snapshot {
+        padding: 21px 17px;
+    }
+
+    .quick-card {
+        padding: 16px;
+    }
+
+    .profile-bottom a {
+        width: 100%;
+
+        justify-content: center;
+
+        box-sizing: border-box;
+    }
+}

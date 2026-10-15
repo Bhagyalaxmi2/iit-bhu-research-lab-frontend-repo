@@ -1,0 +1,1568 @@
+/* =====================================================
+   SUPERVISOR PAGE
+===================================================== */
+
+.supervisor-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f6f9fc;
+  color: #12304d;
+
+  padding-bottom: 80px;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.supervisor-hero {
+  width: 100%;
+
+  text-align: center;
+
+  padding: 75px 20px 65px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+}
+
+.supervisor-hero span,
+.section-heading span,
+.section-heading-row span,
+.small-label {
+  display: inline-block;
+
+  color: #1677c8;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+.supervisor-hero h1 {
+  margin: 14px 0;
+
+  color: #102a43;
+
+  font-size: clamp(42px, 6vw, 70px);
+
+  line-height: 1.08;
+
+  font-weight: 700;
+
+  letter-spacing: -1.5px;
+}
+
+.supervisor-hero p {
+  width: min(700px, 90%);
+
+  margin: 0 auto;
+
+  color: #60758b;
+
+  font-size: 17px;
+
+  line-height: 1.75;
+}
+
+
+/* =====================================================
+   PROFILE SECTION
+===================================================== */
+
+.supervisor-profile-section {
+  width: min(1180px, 92%);
+
+  margin: 50px auto;
+
+  padding: 45px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e8ef;
+
+  border-radius: 24px;
+
+  display: grid;
+
+  grid-template-columns: 350px minmax(0, 1fr);
+
+  gap: 55px;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 12px 35px rgba(15, 50, 80, 0.07);
+}
+
+
+/* =====================================================
+   PROFILE PHOTO
+===================================================== */
+.supervisor-photo {
+  height: 390px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #e8f0f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.supervisor-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* =====================================================
+   PHOTO PLACEHOLDER
+===================================================== */
+
+.profile-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  text-align: center;
+
+  box-sizing: border-box;
+
+  color: #176fc0;
+
+  font-size: 32px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   MAIN PROFILE INFORMATION
+===================================================== */
+
+.supervisor-main-info {
+  width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* Principal Investigator */
+
+.supervisor-main-info > span:first-child {
+  display: inline-block;
+
+  margin-bottom: 13px;
+
+  color: #1677c8;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 3.5px;
+
+  text-transform: uppercase;
+}
+
+
+/* Name */
+
+.supervisor-main-info h2 {
+  margin: 0 0 8px;
+
+  color: #101828;
+
+  font-size: clamp(38px, 4vw, 52px);
+
+  line-height: 1.1;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+}
+
+
+/* Designation */
+
+.supervisor-main-info h3 {
+  margin: 0 0 14px;
+
+  color: #176fc0;
+
+  font-size: 20px;
+
+  line-height: 1.4;
+
+  font-weight: 600;
+}
+
+
+/* Department */
+
+.department {
+  margin: 0 0 20px;
+
+  color: #526a80;
+
+  font-size: 16px;
+
+  line-height: 1.65;
+}
+
+
+/* Description */
+
+.supervisor-main-info > p {
+  max-width: 720px;
+
+  margin: 0;
+
+  color: #60758b;
+
+  font-size: 15.5px;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   CONTACT INFORMATION
+===================================================== */
+
+.contact-info {
+  width: 100%;
+
+  margin: 28px 0 22px;
+
+  padding: 18px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 10px;
+
+  background: #f3fafb;
+
+  border: 1px solid #d8edef;
+
+  border-radius: 14px;
+
+  box-sizing: border-box;
+}
+
+.contact-info a {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 10px 15px;
+
+  background: #ffffff;
+
+  border: 1px solid #dbe7ee;
+
+  border-radius: 30px;
+
+  color: #176fc0;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  line-height: 1.3;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contact-info a:hover {
+  background: #eef7ff;
+
+  border-color: #b9d8ef;
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   PROFILE LINKS
+===================================================== */
+
+.scholar-button,
+.linkedln-button,
+.linkedin-button,
+.orcid-button,
+.researchgate-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+
+  padding: 0 19px;
+
+  margin: 0 8px 8px 0;
+
+  box-sizing: border-box;
+
+  background: #176fc0;
+
+  color: #ffffff;
+
+  border: 1px solid #176fc0;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* Hover */
+
+.scholar-button:hover,
+.linkedln-button:hover,
+.linkedin-button:hover,
+.orcid-button:hover,
+.researchgate-button:hover {
+  background: #0d5fa8;
+
+  border-color: #0d5fa8;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 12px rgba(23, 112, 192, 0.2);
+}
+
+
+/* =====================================================
+   REMOVE OLD FLOATING TAG FROM PROFILE
+===================================================== */
+
+.supervisor-profile-section .research-tag {
+  display: none;
+}
+
+
+/* Also prevent an old floating tag from affecting
+   the profile layout */
+
+.supervisor-profile-section .small-label {
+  position: static;
+
+  transform: none;
+}
+
+
+/* =====================================================
+   STATISTICS
+===================================================== */
+
+.statistics-section {
+  width: min(1150px, 92%);
+
+  margin: 40px auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+.stat-card {
+  background: #103451;
+
+  color: #ffffff;
+
+  border-radius: 18px;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+}
+
+.stat-card strong {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 38px;
+
+  line-height: 1.1;
+}
+
+.stat-card span {
+  color: #bcd5e8;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   CONTENT SECTIONS
+===================================================== */
+
+.content-section {
+  width: min(1150px, 92%);
+
+  margin: 70px auto;
+}
+
+.section-heading {
+  margin-bottom: 30px;
+}
+
+.section-heading h2,
+.section-heading-row h2 {
+  margin: 10px 0;
+
+  color: #102a43;
+
+  font-size: 38px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   RESEARCH TAGS
+===================================================== */
+
+.research-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.research-tag {
+  padding: 12px 17px;
+
+  border: 1px solid #dce8f2;
+
+  border-radius: 30px;
+
+  background: #ffffff;
+
+  color: #176fc0;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   SECTION HEADER
+===================================================== */
+
+.section-heading-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-end;
+
+  gap: 20px;
+
+  margin-bottom: 30px;
+}
+
+.add-button {
+  border: none;
+
+  background: #176fc0;
+
+  color: #ffffff;
+
+  padding: 12px 20px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  transition: 0.2s ease;
+}
+
+.add-button:hover {
+  background: #0d579c;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.editable-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 22px;
+}
+
+.editable-card {
+  min-height: 230px;
+
+  padding: 28px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border: 1px solid #e0e8ef;
+
+  border-radius: 18px;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.editable-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 30px rgba(20, 60, 90, 0.1);
+}
+
+.card-year {
+  color: #1677c8;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.editable-card h3 {
+  margin: 15px 0 10px;
+
+  color: #17324d;
+
+  font-size: 21px;
+
+  line-height: 1.35;
+}
+
+.editable-card h4 {
+  color: #1677c8;
+
+  margin: 0 0 8px;
+}
+
+.editable-card p {
+  margin: 0;
+
+  color: #63778b;
+
+  line-height: 1.65;
+}
+
+.editable-card strong {
+  color: #1677c8;
+}
+
+
+/* =====================================================
+   GRANTS
+===================================================== */
+
+.grant-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.grant-top span:first-child {
+  color: #176fc0;
+
+  font-weight: 800;
+}
+
+.grant-top span:last-child {
+  background: #eaf7ee;
+
+  color: #258348;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.grant-details {
+  margin-top: auto;
+}
+
+.grant-details p {
+  margin: 5px 0;
+}
+
+
+/* =====================================================
+   CARD ACTIONS
+===================================================== */
+
+.card-actions {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 20px;
+}
+
+.card-actions button {
+  border: 1px solid #d7e2eb;
+
+  background: #ffffff;
+
+  padding: 8px 14px;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  font: inherit;
+
+  transition: 0.2s ease;
+}
+
+.card-actions button:hover {
+  background: #f5f9fc;
+}
+
+.delete-button {
+  color: #c0392b;
+}
+
+
+/* =====================================================
+   EDITOR
+===================================================== */
+
+.editor-box {
+  margin-top: 25px;
+
+  padding: 30px;
+
+  background: #ffffff;
+
+  border: 2px solid #dce8f2;
+
+  border-radius: 18px;
+
+  box-sizing: border-box;
+}
+
+.editor-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.editor-header button {
+  border: none;
+
+  background: transparent;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+.editor-box form {
+  display: grid;
+
+  gap: 14px;
+}
+
+.editor-box input,
+.editor-box textarea,
+.editor-box select {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d5e0e8;
+
+  border-radius: 8px;
+
+  padding: 13px;
+
+  font: inherit;
+
+  outline: none;
+}
+
+.editor-box input:focus,
+.editor-box textarea:focus,
+.editor-box select:focus {
+  border-color: #6ba9d8;
+
+  box-shadow: 0 0 0 3px rgba(23, 119, 200, 0.08);
+}
+
+.editor-box textarea {
+  min-height: 120px;
+
+  resize: vertical;
+}
+
+.save-button {
+  background: #176fc0;
+
+  color: #ffffff;
+
+  border: none;
+
+  border-radius: 8px;
+
+  padding: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.save-button:hover {
+  background: #0d579c;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .supervisor-profile-section {
+    grid-template-columns: 310px minmax(0, 1fr);
+
+    gap: 35px;
+
+    padding: 38px;
+  }
+
+  .supervisor-photo {
+    height: 410px;
+  }
+
+  .supervisor-main-info h2 {
+    font-size: 40px;
+  }
+
+  .statistics-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .editable-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =====================================================
+   TABLET / SMALL LAPTOP
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .supervisor-profile-section {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+    padding: 32px;
+  }
+
+  .supervisor-photo {
+    width: min(380px, 100%);
+
+    height: 430px;
+
+    margin: 0 auto;
+  }
+
+  .supervisor-main-info h2 {
+    font-size: 38px;
+  }
+
+  .section-heading-row {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .supervisor-page {
+    padding-bottom: 50px;
+  }
+
+
+  /* Hero */
+
+  .supervisor-hero {
+    padding: 55px 18px 45px;
+  }
+
+  .supervisor-hero h1 {
+    font-size: 38px;
+  }
+
+  .supervisor-hero p {
+    font-size: 15px;
+  }
+
+
+  /* Profile */
+
+  .supervisor-profile-section {
+    width: 94%;
+
+    margin: 30px auto;
+
+    padding: 22px;
+
+    gap: 28px;
+
+    border-radius: 18px;
+  }
+
+  .supervisor-photo {
+    height: 360px;
+
+    border-radius: 15px;
+  }
+
+  .supervisor-main-info h2 {
+    font-size: 32px;
+
+    letter-spacing: -0.5px;
+  }
+
+  .supervisor-main-info h3 {
+    font-size: 18px;
+  }
+
+  .department {
+    font-size: 15px;
+  }
+
+  .supervisor-main-info > p {
+    font-size: 14.5px;
+
+    line-height: 1.75;
+  }
+
+
+  /* Contact */
+
+  .contact-info {
+    padding: 14px;
+
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .contact-info a {
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+
+  /* Profile buttons */
+
+  .scholar-button,
+  .linkedln-button,
+  .linkedin-button,
+  .orcid-button,
+  .researchgate-button {
+    width: 100%;
+
+    margin-right: 0;
+  }
+
+
+  /* Statistics */
+
+  .statistics-section {
+    width: 94%;
+
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+
+  /* Content */
+
+  .content-section {
+    width: 94%;
+
+    margin: 50px auto;
+  }
+
+  .section-heading h2,
+  .section-heading-row h2 {
+    font-size: 30px;
+  }
+
+
+  /* Cards */
+
+  .editable-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .editable-card {
+    padding: 23px;
+  }
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .supervisor-profile-section {
+    padding: 18px;
+  }
+
+  .supervisor-photo {
+    height: 320px;
+  }
+
+  .supervisor-main-info h2 {
+    font-size: 29px;
+  }
+
+  .supervisor-main-info h3 {
+    font-size: 17px;
+  }
+
+  .supervisor-hero h1 {
+    font-size: 34px;
+  }
+}
+ /* REMOVE OLD FLOATING RESEARCH TAG FROM PROFILE */
+.supervisor-profile-section .research-tag {
+    display: none !important;
+}
+
+/* =====================================================
+   RESEARCH EXPERTISE
+===================================================== */
+
+.research-expertise-section {
+  width: min(1150px, 92%);
+
+  margin: 70px auto 60px;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   RESEARCH HEADING
+===================================================== */
+
+.research-expertise-heading {
+  max-width: 780px;
+
+  margin-bottom: 32px;
+}
+
+.research-expertise-heading span {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: #1677c8;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+.research-expertise-heading h2 {
+  margin: 0 0 12px;
+
+  color: #102a43;
+
+  font-size: 38px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+.research-expertise-heading p {
+  max-width: 720px;
+
+  margin: 0;
+
+  color: #60758b;
+
+  font-size: 15.5px;
+
+  line-height: 1.75;
+}
+
+
+/* =====================================================
+   RESEARCH GRID
+===================================================== */
+
+.research-expertise-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+
+/* =====================================================
+   RESEARCH CARD
+===================================================== */
+
+.research-expertise-card {
+  position: relative;
+
+  min-height: 145px;
+
+  padding: 24px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe8ef;
+
+  border-radius: 16px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.research-expertise-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #bcd8ed;
+
+  box-shadow:
+    0 12px 28px rgba(20, 60, 90, 0.09);
+}
+
+
+/* =====================================================
+   NUMBER
+===================================================== */
+
+.research-number {
+  margin-bottom: 20px;
+
+  color: #1677c8;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.research-expertise-card h3 {
+  margin: 0;
+
+  color: #17324d;
+
+  font-size: 18px;
+
+  line-height: 1.45;
+
+  font-weight: 650;
+}
+
+
+/* =====================================================
+   SMALL DECORATIVE LINE
+===================================================== */
+
+.research-expertise-card::after {
+  content: "";
+
+  position: absolute;
+
+  left: 24px;
+  bottom: 0;
+
+  width: 45px;
+  height: 3px;
+
+  background: #176fc0;
+
+  border-radius: 3px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .research-expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .research-expertise-section {
+    width: 94%;
+
+    margin: 50px auto;
+  }
+
+  .research-expertise-heading h2 {
+    font-size: 30px;
+  }
+
+  .research-expertise-heading p {
+    font-size: 14.5px;
+  }
+
+  .research-expertise-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .research-expertise-card {
+    min-height: 125px;
+
+    padding: 22px;
+  }
+
+} /* =========================================
+   RESEARCH FORM - ONLY STYLING
+   ========================================= */
+
+.research-edit-form {
+  width: 88%;
+  max-width: 1150px;
+  margin: 35px auto 45px;
+  padding: 30px 36px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+}
+
+
+/* ---------- Form Header ---------- */
+
+.research-form-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+
+  border-bottom: 1px solid #edf1f5;
+}
+
+.research-form-label {
+  display: block;
+  margin-bottom: 6px;
+
+  color: #1976c8;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.research-form-header h3 {
+  margin: 0;
+
+  color: #12304d;
+
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.research-form-header p {
+  margin: 7px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* ---------- Close Button ---------- */
+
+.research-form-close {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f1f5f9;
+  color: #475569;
+
+  font-size: 22px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.research-form-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+
+/* ---------- Form Grid ---------- */
+
+.research-form-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px 26px;
+}
+
+
+/* ---------- Form Fields ---------- */
+
+.research-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.research-form-group label {
+  color: #1e3a56;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* ---------- Inputs ---------- */
+
+.research-form-group input,
+.research-form-group textarea,
+.research-form-group select {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 11px 13px;
+
+  border: 1px solid #d6dee8;
+  border-radius: 8px;
+
+  background: #fbfdff;
+  color: #172b4d;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+
+/* Placeholder */
+
+.research-form-group input::placeholder,
+.research-form-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+
+/* Focus */
+
+.research-form-group input:focus,
+.research-form-group textarea:focus,
+.research-form-group select:focus {
+  border-color: #1976c8;
+  background: #ffffff;
+
+  box-shadow: 0 0 0 3px rgba(25, 118, 200, 0.10);
+}
+
+
+/* ---------- Description ---------- */
+
+.research-form-full {
+  grid-column: 1 / -1;
+}
+
+.research-form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+
+  line-height: 1.5;
+}
+
+
+/* ---------- Buttons ---------- */
+
+.research-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 25px;
+  padding-top: 20px;
+
+  border-top: 1px solid #edf1f5;
+}
+
+
+/* Save / Add */
+
+.research-save-btn {
+  padding: 11px 23px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #1976c8;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.research-save-btn:hover {
+  background: #125ea5;
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 12px rgba(25, 118, 200, 0.20);
+}
+
+
+/* Cancel */
+
+.research-cancel-btn {
+  padding: 10px 22px;
+
+  border: 1px solid #d6dee8;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #475569;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.research-cancel-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+
+/* =========================================
+   ADD RESEARCH BUTTON
+   ========================================= */
+
+.research-add-container {
+  width: 88%;
+  margin: 25px auto 20px;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.research-add-btn {
+  padding: 12px 23px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #1976c8;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.research-add-btn:hover {
+  background: #125ea5;
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 12px rgba(25, 118, 200, 0.20);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  .research-edit-form {
+    width: 94%;
+    padding: 24px 20px;
+  }
+
+  .research-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .research-form-full {
+    grid-column: auto;
+  }
+
+  .research-form-header h3 {
+    font-size: 23px;
+  }
+
+  .research-form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .research-save-btn,
+  .research-cancel-btn {
+    width: 100%;
+  }
+}

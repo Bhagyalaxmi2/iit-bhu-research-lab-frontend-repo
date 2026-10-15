@@ -1,0 +1,654 @@
+/* =====================================================
+   MAIN SECTION
+===================================================== */
+
+.publication-section {
+  width: min(1200px, 92%);
+
+  margin: 0 auto;
+
+  padding: 70px 0 100px;
+
+  color: #102f4d;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.publication-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-end;
+
+  gap: 40px;
+
+  margin-bottom: 70px;
+}
+
+
+.publication-label,
+.recent-label {
+  display: block;
+
+  color: #176fc1;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+  margin-bottom: 12px;
+}
+
+
+.publication-header h1 {
+  font-size: clamp(38px, 5vw, 60px);
+
+  line-height: 1.05;
+
+  margin: 0 0 18px;
+
+  font-weight: 750;
+}
+
+
+.publication-header p {
+  max-width: 720px;
+
+  color: #60758a;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+
+/* =====================================================
+   GOOGLE SCHOLAR
+===================================================== */
+
+.scholar-link {
+  flex-shrink: 0;
+
+  color: #176fc1;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid #176fc1;
+
+  padding-bottom: 4px;
+}
+
+.scholar-link:hover {
+  color: #0d4f8a;
+}
+
+
+/* =====================================================
+   CONTROLS
+===================================================== */
+
+.publication-controls {
+  display: grid;
+
+  grid-template-columns: 1fr auto auto;
+
+  align-items: end;
+
+  gap: 30px;
+
+  margin-bottom: 35px;
+
+  padding-bottom: 25px;
+
+  border-bottom: 1px solid #dfe7ef;
+}
+
+
+.publication-controls h2 {
+  margin: 0;
+
+  font-size: 32px;
+}
+
+
+.publication-controls p {
+  margin: 7px 0 0;
+
+  color: #6b7d8f;
+}
+
+
+/* =====================================================
+   FILTERS
+===================================================== */
+
+.publication-filters {
+  display: flex;
+
+  gap: 5px;
+
+  background: #f0f5f9;
+
+  padding: 5px;
+
+  border-radius: 10px;
+}
+
+
+.publication-filters button {
+  border: none;
+
+  background: transparent;
+
+  color: #5c7084;
+
+  padding: 9px 15px;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+
+.publication-filters button:hover {
+  color: #176fc1;
+}
+
+
+.publication-filters .filter-active {
+  background: white;
+
+  color: #176fc1;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =====================================================
+   ADD BUTTON
+===================================================== */
+
+.add-publication-btn {
+  border: none;
+
+  background: #176fc1;
+
+  color: white;
+
+  padding: 12px 18px;
+
+  border-radius: 9px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition: 0.2s ease;
+}
+
+
+.add-publication-btn:hover {
+  background: #0d5a9e;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   PUBLICATION GRID
+===================================================== */
+
+.publication-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+
+/* =====================================================
+   FORM CONTAINER
+===================================================== */
+
+.publication-form-container {
+  background: #f7fafc;
+
+  border: 1px solid #dbe6ef;
+
+  border-radius: 18px;
+
+  padding: 30px;
+
+  margin-bottom: 40px;
+
+  box-shadow:
+    0 10px 30px rgba(20, 50, 80, 0.08);
+}
+
+
+/* =====================================================
+   FORM HEADER
+===================================================== */
+
+.publication-form-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  margin-bottom: 28px;
+}
+
+
+.publication-form-header span {
+  color: #176fc1;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+}
+
+
+.publication-form-header h2 {
+  margin: 7px 0 0;
+
+  font-size: 27px;
+}
+
+
+.form-close {
+  border: none;
+
+  background: #e9f0f5;
+
+  color: #526579;
+
+  width: 35px;
+
+  height: 35px;
+
+  border-radius: 50%;
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+.form-close:hover {
+  background: #dce7ef;
+}
+
+
+/* =====================================================
+   FORM GRID
+===================================================== */
+
+.publication-form {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+
+.form-group label {
+  font-size: 13px;
+
+  font-weight: 700;
+
+  color: #304c64;
+}
+
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #ccd9e4;
+
+  background: white;
+
+  border-radius: 8px;
+
+  padding: 12px 13px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  color: #203d55;
+
+  outline: none;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #176fc1;
+
+  box-shadow:
+    0 0 0 3px rgba(23, 111, 193, 0.1);
+}
+
+
+.form-group textarea {
+  resize: vertical;
+}
+
+
+/* =====================================================
+   FORM ACTIONS
+===================================================== */
+
+.form-actions {
+  grid-column: 1 / -1;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding-top: 10px;
+}
+
+
+.cancel-btn,
+.save-btn {
+  border: none;
+
+  padding: 12px 20px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+}
+
+
+.cancel-btn {
+  background: #e9eff4;
+
+  color: #506579;
+}
+
+
+.cancel-btn:hover {
+  background: #dce6ed;
+}
+
+
+.save-btn {
+  background: #176fc1;
+
+  color: white;
+}
+
+
+.save-btn:hover {
+  background: #0d5a9e;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.no-publications {
+  grid-column: 1 / -1;
+
+  text-align: center;
+
+  padding: 70px 20px;
+
+  border: 1px dashed #cbd9e4;
+
+  border-radius: 15px;
+}
+
+
+.no-publications h3 {
+  margin: 0 0 8px;
+}
+
+
+.no-publications p {
+  margin: 0;
+
+  color: #718396;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .publication-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .publication-controls {
+    grid-template-columns: 1fr;
+
+    align-items: stretch;
+  }
+
+  .publication-filters {
+    width: fit-content;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .publication-section {
+    width: 92%;
+
+    padding: 50px 0 70px;
+  }
+
+  .publication-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .publication-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full {
+    grid-column: auto;
+  }
+
+  .form-actions {
+    grid-column: auto;
+
+    flex-direction: column;
+  }
+
+  .cancel-btn,
+  .save-btn {
+    width: 100%;
+  }
+
+  .publication-filters {
+    width: 100%;
+  }
+
+  .publication-filters button {
+    flex: 1;
+  }
+
+  .add-publication-btn {
+    width: 100%;
+  }
+
+}.publication-grid {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+}
+ /* =====================================================
+   PUBLICATION ACTION BUTTONS
+===================================================== */
+
+.publication-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 20px;
+  padding-top: 16px;
+
+  border-top: 1px solid #e5ebf1;
+}
+
+
+/* Read Paper */
+
+.read-paper-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 9px 15px;
+
+  background: #176fc1;
+  color: white;
+
+  border: none;
+  border-radius: 7px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: all 0.2s ease;
+}
+
+.read-paper-btn:hover {
+  background: #0d5a9e;
+  transform: translateY(-1px);
+}
+
+
+/* Edit */
+
+.edit-btn {
+  margin-left: auto;
+
+  padding: 8px 14px;
+
+  background: #eef5fc;
+  color: #176fc1;
+
+  border: 1px solid #d5e5f4;
+  border-radius: 7px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.edit-btn:hover {
+  background: #dcecfb;
+}
+
+
+/* Delete */
+
+.delete-btn {
+  padding: 8px 14px;
+
+  background: #fff4f2;
+  color: #c0392b;
+
+  border: 1px solid #f2d3ce;
+  border-radius: 7px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #fde4e0;
+  color: #a93226;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .publication-actions {
+    flex-wrap: wrap;
+  }
+
+  .edit-btn {
+    margin-left: 0;
+  }
+}

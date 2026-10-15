@@ -1,0 +1,334 @@
+/* =========================================
+   PEOPLE HOME
+========================================= */
+
+.people-home {
+  width: 100%;
+  box-sizing: border-box;
+
+  background: #f8fafc;
+
+  padding: 25px 20px 45px;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.people-content {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   BREADCRUMB
+========================================= */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin: 0 0 28px;
+
+  font-size: 14px;
+
+  color: #64748b;
+}
+
+.breadcrumb span:first-child {
+  color: #2563eb;
+
+  font-weight: 500;
+}
+
+.breadcrumb-line {
+  color: #94a3b8;
+}
+
+
+/* =========================================
+   PAGE TITLE
+========================================= */
+
+.people-title {
+  max-width: 820px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.people-title h1 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 42px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   TITLE BLUE LINE
+========================================= */
+
+.title-line {
+  width: 55px;
+
+  height: 3px;
+
+  margin: 14px auto 18px;
+
+  background: #2563eb;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.people-description {
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  color: #64748b;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   ADD PERSON BUTTON
+========================================= */
+
+.add-person-btn {
+  display: block;
+
+  margin: 28px auto 0;
+
+  padding: 10px 22px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.add-person-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   PERSON FORM
+========================================= */
+
+.person-form {
+  width: 100%;
+
+  max-width: 650px;
+
+  margin: 28px auto 0;
+
+  padding: 25px;
+
+  box-sizing: border-box;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 12px;
+
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================
+   FORM TITLE
+========================================= */
+
+.person-form h2 {
+  margin: 0 0 22px;
+
+  text-align: center;
+
+  color: #0f172a;
+
+  font-size: 24px;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.person-form form {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.person-form label {
+  margin: 12px 0 6px;
+
+  color: #334155;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   INPUT + SELECT
+========================================= */
+
+.person-form input,
+.person-form select {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 10px 12px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 6px;
+
+  outline: none;
+
+  background: white;
+
+  color: #334155;
+
+  font-size: 14px;
+
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+
+/* =========================================
+   INPUT FOCUS
+========================================= */
+
+.person-form input:focus,
+.person-form select:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* =========================================
+   CREATE BUTTON
+========================================= */
+
+.create-person-btn {
+  margin-top: 22px;
+
+  padding: 11px 18px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.create-person-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .people-home {
+    padding: 20px 16px 35px;
+  }
+
+
+  .breadcrumb {
+    margin-bottom: 22px;
+
+    font-size: 13px;
+  }
+
+
+  .people-title h1 {
+    font-size: 32px;
+  }
+
+
+  .people-description {
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+
+  .person-form {
+    padding: 20px;
+  }
+
+
+  .person-form h2 {
+    font-size: 21px;
+  }
+
+}

@@ -1,0 +1,540 @@
+/* =========================================================
+   FINAL CARD FIX
+   Prevent tag / buttons / content overlap
+========================================================= */
+
+.research-container {
+  align-items: start;
+}
+
+.research-card {
+  height: auto;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.research-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.research-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* IMPORTANT:
+   Reset old absolute positioning */
+.research-tag {
+  position: static !important;
+  display: inline-flex;
+  width: fit-content;
+  align-self: flex-start;
+
+  margin: 0 0 14px 0;
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  background: #eff6ff;
+  color: #1769aa;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+/* Content must determine its own height */
+.research-card-content {
+  display: flex;
+  flex-direction: column;
+
+  flex: none;
+  height: auto;
+  min-height: 0;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+}
+
+/* Description should never push/overlap other elements */
+.research-description {
+  margin: 0 0 20px;
+
+  line-height: 1.7;
+
+  overflow: visible;
+}
+
+/* Focus section stays in normal document flow */
+.research-focus-section {
+  position: static;
+  margin: 0 0 22px;
+}
+
+/* Literature stays below focus */
+.research-literature {
+  position: static;
+  margin: 0;
+  padding-top: 20px;
+
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Buttons stay BELOW everything */
+.research-card-actions {
+  position: static !important;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+
+  margin-top: 20px;
+  padding-top: 16px;
+
+  border-top: 1px solid #e5e7eb;
+
+  box-sizing: border-box;
+}
+
+/* Buttons cannot overlap */
+.research-card-actions .edit-btn,
+.research-card-actions .delete-btn,
+.research-card-actions .learn-more {
+  position: static !important;
+
+  flex: 1;
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  white-space: nowrap;
+}
+
+/* Keep buttons inside card */
+.research-card-actions button {
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .research-card-image-wrapper {
+    height: 230px;
+  }
+
+  .research-card-content {
+    padding: 20px;
+  }
+
+  .research-card-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .research-card-actions button {
+    width: 100%;
+  }
+} 
+/* =========================================================
+   CORE RESEARCH AREAS — FINAL RESET
+========================================================= */
+
+.core-research-header {
+  width: min(900px, 92%);
+  margin: 0 auto 45px;
+
+  padding: 0;
+
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+
+/* SMALL BLUE LABEL */
+
+.core-research-label {
+  display: block;
+
+  margin: 0 0 12px;
+
+  color: #1769aa;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  line-height: 1.3;
+
+  text-transform: uppercase;
+}
+
+
+/* MAIN HEADING */
+
+.core-research-header h2 {
+  margin: 0 0 16px;
+
+  color: #102a43;
+
+  font-size: clamp(32px, 4vw, 44px);
+
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  text-align: center;
+}
+
+
+/* DESCRIPTION */
+
+.core-research-header p {
+  width: min(750px, 100%);
+
+  margin: 0 auto;
+
+  color: #526477;
+
+  font-size: 16px;
+
+  line-height: 1.75;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   MAKE SURE THE WHOLE SECTION IS CENTERED
+========================================================= */
+
+.research-section {
+  width: 100%;
+
+  margin: 0 auto;
+
+  padding: 80px 20px 100px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   RESEARCH CARDS
+   Keep them centered underneath the heading
+========================================================= */
+
+.research-container {
+  width: min(1250px, 100%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 30px;
+
+  align-items: start;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .core-research-header {
+    width: 92%;
+  }
+
+  .research-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .research-section {
+    padding: 55px 15px 70px;
+  }
+
+  .core-research-header {
+    width: 94%;
+    margin-bottom: 35px;
+  }
+
+  .core-research-header h2 {
+    font-size: 30px;
+  }
+
+  .core-research-header p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .research-container {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+}
+/* ==========================================
+   ADD RESEARCH BUTTON
+========================================== */
+
+.research-add-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 25px;
+}
+
+.research-add-btn {
+  border: none;
+  background: #176fc0;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.research-add-btn:hover {
+  background: #125a9d;
+  transform: translateY(-1px);
+}
+/* =========================================
+   ADD / EDIT RESEARCH FORM
+   ========================================= */
+
+.research-edit-form {
+  width: 90%;
+  max-width: 1100px;
+  margin: 30px auto 40px;
+  padding: 28px 32px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+/* Form heading */
+.research-edit-form h3 {
+  margin: 0 0 25px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #132f4c;
+}
+
+/* Form layout */
+.research-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 24px;
+}
+
+/* Individual field */
+.research-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.research-form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #243b53;
+}
+
+/* Inputs */
+.research-form-group input,
+.research-form-group textarea,
+.research-form-group select {
+  width: 100%;
+  padding: 11px 13px;
+  box-sizing: border-box;
+
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+
+  background: #ffffff;
+  color: #172b4d;
+
+  font-size: 14px;
+  font-family: inherit;
+
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Textarea */
+.research-form-group textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+/* Focus */
+.research-form-group input:focus,
+.research-form-group textarea:focus,
+.research-form-group select:focus {
+  border-color: #1976c8;
+  box-shadow: 0 0 0 3px rgba(25, 118, 200, 0.12);
+}
+
+/* Description takes full width */
+.research-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Form buttons */
+.research-form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+/* Add / Save button */
+.research-form-actions button[type="submit"] {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 7px;
+
+  background: #1976c8;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.research-form-actions button[type="submit"]:hover {
+  background: #125ea5;
+  transform: translateY(-1px);
+}
+
+/* Cancel button */
+.research-form-actions button[type="button"] {
+  padding: 10px 22px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+
+  background: #ffffff;
+  color: #374151;
+
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.research-form-actions button[type="button"]:hover {
+  background: #f3f4f6;
+}
+
+/* Close X button */
+.research-edit-form > button:first-of-type {
+  float: right;
+
+  border: none;
+  background: transparent;
+
+  color: #6b7280;
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+.research-edit-form > button:first-of-type:hover {
+  color: #111827;
+}
+
+
+/* =========================================
+   ADD RESEARCH BUTTON
+   ========================================= */
+
+.research-add-container {
+  width: 90%;
+  margin: 25px auto 20px;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.research-add-btn {
+  padding: 12px 24px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #1976c8;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.research-add-btn:hover {
+  background: #125ea5;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+  .research-edit-form {
+    width: 94%;
+    padding: 22px;
+  }
+
+  .research-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .research-form-group.full-width {
+    grid-column: auto;
+  }
+
+  .research-add-container {
+    width: 94%;
+  }
+}
